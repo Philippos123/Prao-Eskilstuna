@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="registration-container-wrapper">  <!-- Wrapper för centrering -->
+    <div class="registration-container">  <!-- Själva registreringsformuläret -->
+        <h2>Registrera dig</h2>
+        <form method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registrera</button>
+        </form>
+        <p>Har du redan ett konto? <a href="{% url 'account_login' %}">Logga in här</a></p>
+    </div>
+</div>
+{% endblock %}

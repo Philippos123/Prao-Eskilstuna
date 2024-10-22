@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Lägger till denna rad för att ladda styles.css -->
     <title>{% block title %}Prao Platser{% endblock %}</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
     <style>
         /* Grundläggande stil för body */
         body {
@@ -61,11 +63,12 @@
 <body>
     <!-- Navigeringsfält -->
     <nav>
-        <a href="#home">Hem</a>
+        <a href="{% url 'index' %}">Hem</a>  <!-- Justerat för att använda allauth:s registrering -->
         <a href="#about">Om</a>
         <a href="{% url 'prao' %}">Prao Platser</a>
         <a href="#kontakt">Kontakt</a>
         <a href="{% url 'account_login' %}">Login</a>  <!-- Justerat för att använda allauth:s inloggning -->
+        <a href="{% url 'account_signup' %}">Registrera</a>  <!-- Justerat för att använda allauth:s registrering -->
     </nav>
 
     <!-- Header -->

@@ -7,4 +7,7 @@ def prao(request):
     return render(request, 'prao-base.html')
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'allauth/login.html')
+
+def signup(request):
+    return render(request, 'allauth/signup.html')

@@ -1,21 +1,161 @@
-    /* Stil för hero */
-    .hero {
-        background-size: cover;
-        background-position: center;
-        height: 400px; /* Justera höjden efter behov */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-        position: relative;
-    }
+/* Centrera registration-container */
+.registration-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full höjd */
+}
 
-    .hero h1 {
-        font-size: 3rem; /* Större text för rubriken */
-        margin: 0;
-    }
+/* Stil för registration-container */
+.registration-container {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
 
-    .hero p {
-        font-size: 1.5rem; /* Mindre text för beskrivning */
-    }
+.registration-container h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.registration-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stil för inputfält */
+.registration-container input[type="text"],
+.registration-container input[type="password"],
+.registration-container input[type="email"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Stil för registreringsknappen */
+.registration-container button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registration-container button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Stil för länken till login */
+.registration-container p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.registration-container p a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.registration-container p a:hover {
+    text-decoration: underline;
+}
+
+/* Fokuserade inputfält */
+.registration-container input[type="text"]:focus,
+.registration-container input[type="password"]:focus,
+.registration-container input[type="email"]:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Centrera login-container */
+.login-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Full höjd på skärmen */
+}
+
+/* Stilen för login-form */
+.login-container {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stil för inputfält */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Stil för knappen */
+.login-container button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Stil för länken till registrering */
+.login-container p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-container p a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+}
+
+/* Fokuserade inputfält */
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #28a745;
+    outline: none;
+}

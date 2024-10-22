@@ -121,11 +121,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'praktik/static',  # Se till att sökvägen är korrekt
-]
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Korrekt sökväg till din statiska mapp
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'  # Vart du vill att användare ska omdirigeras efter inloggning
+LOGOUT_REDIRECT_URL = '/'  # Vart du vill att användare ska omdirigeras efter utloggning
