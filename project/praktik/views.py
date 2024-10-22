@@ -5,3 +5,6 @@ def home(request):
 
 def prao(request):
     return render(request, 'prao-base.html')
+
+def login(request):
+    return render(request, 'login.html')
