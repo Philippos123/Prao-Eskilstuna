@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Prao Platser{% endblock %}</title>
+    {% load static %}
+    <style>
+        /* Grundläggande stil för body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Ljus bakgrundsfärg */
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Stil för navbar */
+        nav {
+            background-color: #28a745; /* Grön färg */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Stil för header */
+        header {
+            background-color: #218838; /* Mörkare grön färg */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Stil för footer */
+        footer {
+            background-color: #28a745; /* Grön färg */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Stil för innehållet */
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigeringsfält -->
+    <nav>
+        <a href="#home">Hem</a>
+        <a href="#about">Om</a>
+        <a href="#prao-platser">Prao Platser</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Prao Platser</h1>
+        <p>Välkommen till sidan för att hitta prao-platser!</p>
+    </header>
+
+    <!-- Innehållsblock -->
+    <div class="content">
+        {% block content %}
+        <!-- Innehållet från de andra sidorna kommer här -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ditt Företagsnamn. Alla rättigheter förbehållna.</p>
+    </footer>
+</body>
+</html>

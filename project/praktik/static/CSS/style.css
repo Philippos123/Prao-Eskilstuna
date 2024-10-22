@@ -1,0 +1,21 @@
+    /* Stil för hero */
+    .hero {
+        background-size: cover;
+        background-position: center;
+        height: 400px; /* Justera höjden efter behov */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+
+    .hero h1 {
+        font-size: 3rem; /* Större text för rubriken */
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 1.5rem; /* Mindre text för beskrivning */
+    }
