@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Hem - Prao Platser{% endblock %}
+
+{% block content %}
+<style>
+    /* Grundläggande stil för body */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Stil för annonskort */
+    .ad-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 20px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+
+    .ad-card:hover {
+        transform: scale(1.02);
+    }
+
+    .ad-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .ad-description {
+        margin-bottom: 15px;
+    }
+
+    .ad-image {
+        max-width: 100%; /* Gör så att bilden aldrig blir större än kortet */
+        border-radius: 5px; /* Rundar hörnen på bilden */
+        margin-bottom: 10px; /* Avstånd mellan bild och text */
+    }
+
+    .apply-button {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .apply-button:hover {
+        background-color: #218838;
+    }
+</style>
+
+
+<!-- Innehåll på startsidan -->
+<div class="content">
+    <h2>Tillgängliga Prao Platser</h2>
+    
+    <div class="ad-card">
+        <img src="{% static 'img/company_a_image.jpg' %}" alt="Företag A" class="ad-image"> <!-- Bild för Företag A -->
+        <div class="ad-title">Företag A</div>
+        <div class="ad-description">Beskrivning av prao-platsen hos Företag A. Här kan eleverna få en inblick i arbetsuppgifter och vad de kan förvänta sig.</div>
+        <a href="#" class="apply-button">Ansök här</a>
+    </div>
+
+    <div class="ad-card">
+        <img src="{% static 'img/company_b_image.jpg' %}" alt="Företag B" class="ad-image"> <!-- Bild för Företag B -->
+        <div class="ad-title">Företag B</div>
+        <div class="ad-description">Beskrivning av prao-platsen hos Företag B. Här kan eleverna få en inblick i arbetsuppgifter och vad de kan förvänta sig.</div>
+        <a href="#" class="apply-button">Ansök här</a>
+    </div>
+
+    <div class="ad-card">
+        <img src="{% static 'img/company_c_image.jpg' %}" alt="Företag C" class="ad-image"> <!-- Bild för Företag C -->
+        <div class="ad-title">Företag C</div>
+        <div class="ad-description">Beskrivning av prao-platsen hos Företag C. Här kan eleverna få en inblick i arbetsuppgifter och vad de kan förvänta sig.</div>
+        <a href="#" class="apply-button">Ansök här</a>
+    </div>
+
+    <!-- Fler annonser kan läggas till här -->
+</div>
+{% endblock %}
