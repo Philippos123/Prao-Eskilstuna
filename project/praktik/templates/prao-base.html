@@ -1,6 +1,6 @@
+
 {% extends 'base.html' %}
 {% load static %}
-
 
 {% block title %}Hem - Prao Platser{% endblock %}
 
@@ -59,32 +59,19 @@
     }
 </style>
 
-
 <!-- Innehåll på startsidan -->
 <div class="content">
     <h2>Tillgängliga Prao Platser</h2>
-    
-    <div class="ad-card">
-        <img src="{% static 'img/company_a_image.jpg' %}" alt="Företag A" class="ad-image"> <!-- Bild för Företag A -->
-        <div class="ad-title">Företag A</div>
-        <div class="ad-description">Beskrivning av prao-platsen hos Företag A. Här kan eleverna få en inblick i arbetsuppgifter och vad de kan förvänta sig.</div>
-        <a href="#" class="apply-button">Ansök här</a>
-    </div>
 
+    {% for annons in annonser %}
     <div class="ad-card">
-        <img src="{% static 'img/company_b_image.jpg' %}" alt="Företag B" class="ad-image"> <!-- Bild för Företag B -->
-        <div class="ad-title">Företag B</div>
-        <div class="ad-description">Beskrivning av prao-platsen hos Företag B. Här kan eleverna få en inblick i arbetsuppgifter och vad de kan förvänta sig.</div>
-        <a href="#" class="apply-button">Ansök här</a>
+        <img src="{% static 'img/company_placeholder_image.jpg' %}" alt="{{ annons.företag }}" class="ad-image"> <!-- Placeholder för företagets bild -->
+        <div class="ad-title">{{ annons.rubrik }}</div>
+        <div class="ad-description">{{ annons.beskrivning|truncatewords:30 }}</div>
+        <a href="{% url 'annons_detajl' annons.id %}" class="apply-button">Ansök här</a>
     </div>
-
-    <div class="ad-card">
-        <img src="{% static 'img/company_c_image.jpg' %}" alt="Företag C" class="ad-image"> <!-- Bild för Företag C -->
-        <div class="ad-title">Företag C</div>
-        <div class="ad-description">Beskrivning av prao-platsen hos Företag C. Här kan eleverna få en inblick i arbetsuppgifter och vad de kan förvänta sig.</div>
-        <a href="#" class="apply-button">Ansök här</a>
-    </div>
-
-    <!-- Fler annonser kan läggas till här -->
+    {% empty %}
+    <p>Inga annonser tillgängliga just nu.</p>
+    {% endfor %}
 </div>
 {% endblock %}

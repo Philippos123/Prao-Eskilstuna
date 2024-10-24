@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Detaljer för {{ annons.rubrik }}{% endblock %}
+
+{% block content %}
+<h1>{{ annons.rubrik }}</h1>
+<p><strong>Företag:</strong> {{ annons.företag }}</p>
+<p><strong>Beskrivning:</strong> {{ annons.beskrivning }}</p>
+<p><strong>Kontaktperson:</strong> {{ annons.kontaktperson }}</p>
+<p><strong>Email:</strong> {{ annons.email }}</p>
+<p><strong>Telefon:</strong> {{ annons.telefon }}</p>
+<p><strong>Publicerad:</strong> {{ annons.publicerad_datum }}</p>
+<a href="{% url 'prao' %}">Tillbaka till listan</a>
+{% endblock %}

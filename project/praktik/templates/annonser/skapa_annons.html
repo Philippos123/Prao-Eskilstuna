@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Skapa en Praoannons{% endblock %}
+
+{% block content %}
+<h1>Skapa en Praoannons</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Visar formulärfälten -->
+    <button type="submit">Lägg upp annons</button>
+</form>
+<a href="{% url 'prao' %}">Tillbaka till annonser</a>
+{% endblock %}
