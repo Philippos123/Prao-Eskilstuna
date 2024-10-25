@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -16,48 +15,87 @@
 
     /* Stil för annonskort */
     .ad-card {
-        background-color: white;
+        display: flex; /* Använd flexbox för att placera bild och text sida vid sida */
+        background-color: #ffffff;
         border: 1px solid #ddd;
-        border-radius: 5px;
+        border-radius: 8px;
         margin: 20px;
         padding: 15px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        transition: transform 0.2s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .ad-card:hover {
-        transform: scale(1.02);
+        transform: translateY(-5px); /* Liten lyftning vid hover */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Mörkare skugga vid hover */
+    }
+
+    .ad-image-container {
+        flex: 0 0 20%; /* Bilden tar upp 20% av kortets bredd */
+        display: flex; /* Gör bildcontainern en flexbox */
+        align-items: center; /* Centrera vertikalt */
+        justify-content: center; /* Centrera horisontellt */
+    }
+
+    .ad-image {
+        max-width: 100%; /* Bilden fyller hela bredden av sin container */
+        height: auto; /* Bibehåller proportionerna */
+        border-radius: 5px; /* Rundar hörnen på bilden */
+    }
+
+    .ad-text-container {
+        flex: 1; /* Textcontainer tar upp resten av utrymmet */
+        padding-left: 15px; /* Avstånd mellan bild och text */
     }
 
     .ad-title {
         font-size: 1.5em;
         margin-bottom: 10px;
+        color: #007BFF; /* Blå färg för rubriker */
     }
 
     .ad-description {
         margin-bottom: 15px;
+        color: #666; /* Ljusare färg för beskrivning */
     }
 
-    .ad-image {
-        max-width: 100%; /* Gör så att bilden aldrig blir större än kortet */
-        border-radius: 5px; /* Rundar hörnen på bilden */
-        margin-bottom: 10px; /* Avstånd mellan bild och text */
+    .ad-info {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f9f9f9; /* Ljus bakgrund för information */
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .ad-info-item {
+        margin-bottom: 5px; /* Utrymme mellan informationen */
+        color: #333; /* Mörkare textfärg för läsbarhet */
     }
 
     .apply-button {
         display: inline-block;
         padding: 10px 15px;
-        background-color: #28a745;
+        background-color: #28a745; /* Grön bakgrund */
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, transform 0.3s; /* Övergångar för hover-effekt */
     }
 
     .apply-button:hover {
-        background-color: #218838;
+        background-color: #218838; /* Mörkare grön vid hover */
+        transform: scale(1.05); /* Liten förstoring vid hover */
     }
 </style>
+
+<!-- Filtreringsformulär -->
+<div class="filter-form" style="margin-bottom: 20px;">
+    <form method="GET" action="{% url 'prao' %}">
+        <input type="text" name="företag" placeholder="Sök efter företag..." value="{{ request.GET.företag }}">
+        <input type="text" name="rubrik" placeholder="Sök efter rubrik..." value="{{ request.GET.rubrik }}">
+        <button type="submit">Filtrera</button>
+    </form>
+</div>
 
 <!-- Innehåll på startsidan -->
 <div class="content">
@@ -65,10 +103,20 @@
 
     {% for annons in annonser %}
     <div class="ad-card">
-        <img src="{% static 'img/company_placeholder_image.jpg' %}" alt="{{ annons.företag }}" class="ad-image"> <!-- Placeholder för företagets bild -->
-        <div class="ad-title">{{ annons.rubrik }}</div>
-        <div class="ad-description">{{ annons.beskrivning|truncatewords:30 }}</div>
-        <a href="{% url 'annons_detajl' annons.id %}" class="apply-button">Ansök här</a>
+        <div class="ad-image-container">
+            {% if annons.bild %}
+                <img src="{{ annons.bild.url }}" alt="Banner för {{ annons.rubrik }}" class="ad-image">
+            {% endif %}
+        </div>
+        <div class="ad-text-container">
+            <div class="ad-title">{{ annons.rubrik }}</div>
+            <div class="ad-description">{{ annons.beskrivning|truncatewords:30 }}</div>
+            <div class="ad-info">
+                <div class="ad-info-item"><strong>Företag:</strong> {{ annons.företag }}</div>
+                <div class="ad-info-item"><strong>Publicerad:</strong> {{ annons.publicerad_datum }}</div>
+            </div>
+            <a href="{% url 'annons_detajl' annons.id %}" class="apply-button">Ansök här</a>
+        </div>
     </div>
     {% empty %}
     <p>Inga annonser tillgängliga just nu.</p>

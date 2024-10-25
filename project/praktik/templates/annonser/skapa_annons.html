@@ -4,9 +4,10 @@
 
 {% block content %}
 <h1>Skapa en Praoannons</h1>
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">  <!-- Lägg till enctype -->
     {% csrf_token %}
     {{ form.as_p }}  <!-- Visar formulärfälten -->
+    
     <button type="submit">Lägg upp annons</button>
 </form>
 <a href="{% url 'prao' %}">Tillbaka till annonser</a>

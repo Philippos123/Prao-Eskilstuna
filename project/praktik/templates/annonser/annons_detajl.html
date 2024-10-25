@@ -1,14 +1,43 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Detaljer för {{ annons.rubrik }}{% endblock %}
 
 {% block content %}
-<h1>{{ annons.rubrik }}</h1>
-<p><strong>Företag:</strong> {{ annons.företag }}</p>
-<p><strong>Beskrivning:</strong> {{ annons.beskrivning }}</p>
-<p><strong>Kontaktperson:</strong> {{ annons.kontaktperson }}</p>
-<p><strong>Email:</strong> {{ annons.email }}</p>
-<p><strong>Telefon:</strong> {{ annons.telefon }}</p>
-<p><strong>Publicerad:</strong> {{ annons.publicerad_datum }}</p>
-<a href="{% url 'prao' %}">Tillbaka till listan</a>
+<div class="annons-container">
+    <h1>{{ annons.rubrik }}</h1>
+
+    {% if annons.bild %}
+        <div class="banner">
+            <img src="{{ annons.bild.url }}" alt="Banner för {{ annons.rubrik }}">
+        </div>
+    {% endif %}
+
+    <div class="info-item">
+        <strong class="foretag-header"><p>{{ annons.företag }}</p></strong>
+    </div>
+
+    <div class="description">
+        <p><strong class="description-header">Beskrivning:</strong></p>
+        <p>{{ annons.beskrivning }}</p>
+    </div>
+
+    <div class="contact-info">
+        <h2>Kontaktinformation</h2>
+        <div class="info-item">
+            <strong>Kontaktperson:</strong> {{ annons.kontaktperson }}
+        </div>
+        <div class="info-item">
+            <strong>Email:</strong> {{ annons.email }}
+        </div>
+        <div class="info-item">
+            <strong>Telefon:</strong> {{ annons.telefon }}
+        </div>
+        <div class="info-item">
+            <strong>Publicerad:</strong> {{ annons.publicerad_datum }}
+        </div>
+    </div>
+
+    <a href="{% url 'prao' %}" class="back-button">Tillbaka till listan</a>
+</div>
 {% endblock %}

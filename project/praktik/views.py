@@ -8,6 +8,17 @@ def home(request):
 
 def prao(request):
     annonser = PraoAnnons.objects.all()  # Hämta alla annonser
+
+    # Filtrering
+    företag_filter = request.GET.get('företag', '')
+    rubrik_filter = request.GET.get('rubrik', '')
+
+    if företag_filter:
+        annonser = annonser.filter(företag__icontains=företag_filter)
+
+    if rubrik_filter:
+        annonser = annonser.filter(rubrik__icontains=rubrik_filter)
+
     return render(request, 'prao-base.html', {'annonser': annonser})
 
 def login(request):
@@ -19,7 +30,7 @@ def signup(request):
 @login_required
 def skapa_annons(request):
     if request.method == "POST":
-        form = PraoAnnonsForm(request.POST)
+        form = PraoAnnonsForm(request.POST, request.FILES)
         if form.is_valid():
             annons = form.save(commit=False)
             annons.användare = request.user  # Koppla annonsen till det inloggade företaget
