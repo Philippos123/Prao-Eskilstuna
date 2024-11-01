@@ -89,11 +89,30 @@
 </style>
 
 <!-- Filtreringsformulär -->
-<div class="filter-form" style="margin-bottom: 20px;">
-    <form method="GET" action="{% url 'prao' %}">
-        <input type="text" name="företag" placeholder="Sök efter företag..." value="{{ request.GET.företag }}">
-        <input type="text" name="rubrik" placeholder="Sök efter rubrik..." value="{{ request.GET.rubrik }}">
-        <button type="submit">Filtrera</button>
+<div class="filter-form" style="margin-bottom: 20px; padding: 15px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+    <form method="GET" action="{% url 'prao' %}" style="display: flex; flex-direction: column; gap: 10px;">
+        <input type="text" name="företag" placeholder="Sök efter företag..." value="{{ request.GET.företag }}" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+        <input type="text" name="rubrik" placeholder="Sök efter rubrik..." value="{{ request.GET.rubrik }}" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+        
+        <div>
+            <strong>Typ av annons:</strong>
+            <label>
+                <input type="checkbox" name="type" value="prao" {% if request.GET.type == 'prao' %}checked{% endif %}>
+                Prao
+            </label>
+            <label>
+                <input type="checkbox" name="type" value="apl" {% if request.GET.type == 'apl' %}checked{% endif %}>
+                APL
+            </label>
+            <label>
+                <input type="checkbox" name="type" value="praktik" {% if request.GET.type == 'praktik' %}checked{% endif %}>
+                Praktik
+            </label>
+        </div>
+
+        <button type="submit" style="padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+            Filtrera
+        </button>
     </form>
 </div>
 
@@ -114,6 +133,7 @@
             <div class="ad-info">
                 <div class="ad-info-item"><strong>Företag:</strong> {{ annons.företag }}</div>
                 <div class="ad-info-item"><strong>Publicerad:</strong> {{ annons.publicerad_datum }}</div>
+                <div class="ad-info-item"><strong>Annons Typ: {{ annons.annons_typ }}</strong></div>
             </div>
             <a href="{% url 'annons_detajl' annons.id %}" class="apply-button">Ansök här</a>
         </div>

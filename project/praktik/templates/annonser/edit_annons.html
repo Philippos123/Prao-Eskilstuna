@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Redigera Annons{% endblock %}
+
+{% block content %}
+<h2>Redigera Annons</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Spara ändringar</button>
+    <a href="{% url 'mina_annonser' %}">Avbryt</a>
+</form>
+{% endblock %}

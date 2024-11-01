@@ -4,6 +4,95 @@
 {% block title %}Detaljer för {{ annons.rubrik }}{% endblock %}
 
 {% block content %}
+<style>
+    /* Grundläggande stil för annonscontainer */
+    .annons-container {
+        max-width: 800px; /* Maximera bredden på annonsen */
+        margin: 20px auto; /* Centrera innehållet */
+        padding: 20px; /* Lägg till inre avstånd */
+        background-color: #ffffff; /* Vit bakgrund */
+        border-radius: 8px; /* Rundade hörn */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Skugga */
+    }
+
+    /* Stil för rubriken */
+    h1 {
+        font-size: 2em; /* Större text för rubriken */
+        color: #007BFF; /* Blå färg för rubriken */
+        margin-bottom: 10px; /* Utrymme under rubriken */
+    }
+
+    /* Stil för bannerbild */
+    .banner {
+        text-align: center; /* Centrera bilden */
+        margin-bottom: 20px; /* Utrymme under banner */
+    }
+
+    .banner img {
+        max-width: 100%; /* Bilden fyller hela bredden av containern */
+        height: auto; /* Bibehålla proportionerna */
+        border-radius: 8px; /* Rundade hörn på bilden */
+    }
+
+    /* Stil för företagsnamnet */
+    .foretag-header {
+        font-size: 1.5em; /* Större text för företagsnamn */
+        color: #333; /* Mörkare färg */
+        margin-bottom: 10px; /* Utrymme under företagsnamn */
+    }
+
+    /* Stil för beskrivning */
+    .description {
+        margin: 20px 0; /* Utrymme ovan och under beskrivningen */
+    }
+
+    .description-header {
+        font-weight: bold; /* Fet stil för beskrivningsrubrik */
+        color: #555; /* Mörkare färg */
+    }
+
+    /* Stil för kontaktinformation */
+    .contact-info {
+        margin: 20px 0; /* Utrymme ovan och under kontaktinformation */
+        padding: 15px; /* Inre avstånd */
+        background-color: #f9f9f9; /* Ljus bakgrund */
+        border-radius: 5px; /* Rundade hörn */
+        border: 1px solid #ddd; /* Grå kantlinje */
+    }
+
+    .info-item {
+        margin: 5px 0; /* Utrymme mellan kontaktinformationer */
+        color: #333; /* Mörkare textfärg för kontaktinformation */
+    }
+
+    /* Stil för tillbaka-knappen */
+    .back-button {
+        display: inline-block; /* Gör knappen inline block */
+        margin-top: 20px; /* Utrymme ovanför knappen */
+        padding: 10px 15px; /* Inre avstånd */
+        background-color: #007BFF; /* Blå bakgrund */
+        color: white; /* Vit textfärg */
+        text-decoration: none; /* Ingen understrykning */
+        border-radius: 5px; /* Rundade hörn */
+        transition: background-color 0.3s; /* Övergång för hover-effekt */
+    }
+
+    .back-button:hover {
+        background-color: #0056b3; /* Mörkare blå vid hover */
+    }
+
+    /* Responsiv design */
+    @media (max-width: 600px) {
+        .annons-container {
+            padding: 15px; /* Minska inre avstånd på mindre skärmar */
+        }
+
+        h1 {
+            font-size: 1.5em; /* Minska rubrikstorlek på små skärmar */
+        }
+    }
+</style>
+
 <div class="annons-container">
     <h1>{{ annons.rubrik }}</h1>
 
@@ -14,7 +103,9 @@
     {% endif %}
 
     <div class="info-item">
-        <strong class="foretag-header"><p>{{ annons.företag }}</p></strong>
+        <strong class="foretag-header">{{ annons.företag }}-</strong>
+        <strong class="foretag-header">{{ annons.annons_typ }}</strong>
+        <hr>
     </div>
 
     <div class="description">

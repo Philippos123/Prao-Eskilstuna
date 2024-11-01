@@ -3,7 +3,100 @@
 {% block title %}Skapa en Praoannons{% endblock %}
 
 {% block content %}
-<h1>Skapa en Praoannons</h1>
+<style>
+    /* Grundläggande stil för body */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4; /* Ljus bakgrundsfärg */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Stil för rubriken */
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        text-align: center; /* Centrerar rubriken */
+        color: #333; /* Mörkare färg för rubriken */
+    }
+
+    /* Stil för formuläret */
+    form {
+        background-color: #ffffff; /* Vit bakgrund för formuläret */
+        border-radius: 8px; /* Rundade hörn */
+        padding: 20px; /* Utrymme inuti formuläret */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+        max-width: 600px; /* Maximal bredd på formuläret */
+        margin: 0 auto; /* Centrerar formuläret horisontellt */
+    }
+
+    /* Stilar för fälten i formuläret */
+    form input,
+    form textarea,
+    form select {
+        width: 100%; /* Fyller hela bredden */
+        padding: 12px; /* Utrymme inuti fälten */
+        margin: 10px 0; /* Utrymme mellan fälten */
+        border: 1px solid #ddd; /* Ljus grå kant */
+        border-radius: 5px; /* Rundade hörn */
+        font-size: 1em; /* Standardiserad textstorlek */
+        box-sizing: border-box; /* Inkluderar padding och kant i fältets totalbredd */
+    }
+
+    /* Stil för knappen */
+    button {
+        padding: 12px 15px; /* Utrymme inuti knappen */
+        background-color: #007BFF; /* Blå bakgrund */
+        color: white; /* Vit text */
+        border: none; /* Ingen kant */
+        border-radius: 5px; /* Rundade hörn */
+        font-size: 1em; /* Textstorlek */
+        cursor: pointer; /* Handpekare vid hover */
+        transition: background-color 0.3s, transform 0.3s; /* Övergångar för hover-effekt */
+        width: 100%; /* Gör knappen full bredd */
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Mörkare blå vid hover */
+        transform: scale(1.05); /* Liten förstoring vid hover */
+    }
+
+    /* Stil för länken */
+    a {
+        display: inline-block; /* Gör länken till en block med utrymme */
+        margin-top: 20px; /* Utrymme ovanför länken */
+        text-decoration: none; /* Ingen understrykning */
+        color: #007BFF; /* Blå färg för länken */
+        text-align: center; /* Centrerar länken */
+    }
+
+    a:hover {
+        text-decoration: underline; /* Understrykning vid hover */
+    }
+
+    /* Media query för mobilanpassning */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2em; /* Mindre rubrik på mobil */
+        }
+
+        form {
+            padding: 15px; /* Mindre padding på mobil */
+        }
+
+        form input,
+        form textarea,
+        form select {
+            padding: 10px; /* Mindre padding på mobil */
+        }
+
+        button {
+            padding: 10px; /* Mindre padding på knappen */
+        }
+    }
+</style>
+
+<h1>Skapa en Annons</h1>
 <form method="POST" enctype="multipart/form-data">  <!-- Lägg till enctype -->
     {% csrf_token %}
     {{ form.as_p }}  <!-- Visar formulärfälten -->
