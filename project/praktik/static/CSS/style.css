@@ -28,6 +28,8 @@
     flex-direction: column;
 }
 
+
+
 /* Stil för inputfält */
 .registration-container input[type="text"],
 .registration-container input[type="password"],
@@ -187,7 +189,7 @@
 h1 {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: #ffffff; /* Mörk färg för kontrast */
+    color: #000000; /* Mörk färg för kontrast */
 }
 
 /* Starka rubriker */
@@ -281,7 +283,7 @@ strong {
 /* Förbättrad stil för submit-knapp */
 .annons-container button[type="submit"] {
     background-color: #28a745;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 12px 20px;
     border: none;
     border-radius: 6px;

@@ -4,7 +4,7 @@ from .models import PraoAnnons
 class PraoAnnonsForm(forms.ModelForm):
     class Meta:
         model = PraoAnnons
-        fields = ['företag', 'rubrik', 'beskrivning', 'kontaktperson', 'email', 'telefon', 'bild']
+        fields = ['företag', 'rubrik', 'beskrivning', 'kontaktperson', 'email', 'telefon', 'bild', 'annons_typ', 'bransch_typ']  # Lägg till annons_typ
         widgets = {
             'företag': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ange företagsnamn'}),
             'rubrik': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ange annonsrubrik'}),

@@ -3,8 +3,8 @@
 {% block title %}Skapa en Praoannons{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">Skapa en Praoannons</h1>
-<form method="POST" enctype="multipart/form-data" class="prao-form">
+<h1>Skapa en Praoannons</h1>
+<form method="POST" enctype="multipart/form-data">  <!-- Lägg till enctype -->
     {% csrf_token %}
     <div class="form-group">
         {{ form.as_p }}  <!-- Visar formulärfälten -->
