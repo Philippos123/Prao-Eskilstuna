@@ -108,6 +108,10 @@
                     <div class="ad-info-item">Kontaktperson: {{ annons.kontaktperson }}</div>
                     <div class="ad-info-item">Email: {{ annons.email }}</div>
                     <div class="ad-info-item">Telefon: {{ annons.telefon }}</div>
+                    <div class="ad-info-item">Annons typ: {{ annons.annons_typ }}</div>
+                    <div class="ad-info-item">Bransch: {{ annons.bransch }}</div>
+                    <div class="ad-info-item">Publicerad: {{ annons.publicerad }}</div>
+                    <div class="ad-info-item">Adress: {{ annons.adress }}</div>
                 </div>
                 <a href="{% url 'edit_annons' annons_id=annons.id %}" class="apply-button">Redigera</a> |
                 <a href="{% url 'radera_annons' annons_id=annons.id %}" class="apply-button" style="background-color: #dc3545;">Ta bort</a>

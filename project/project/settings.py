@@ -135,3 +135,4 @@ LOGOUT_REDIRECT_URL = '/'  # Vart du vill att användare ska omdirigeras efter u
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+

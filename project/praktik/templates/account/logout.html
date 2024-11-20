@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="logout-container-wrapper">
+    <div class="logout-container">
+        <h2>Logga ut</h2>
+        <p>Är du säker på att du vill logga ut?</p>
+        <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <button type="submit">Ja, logga ut</button>
+        </form>
+        <p><a href="{% url 'index' %}">Tillbaka till startsidan</a></p>
+    </div>
+</div>
+{% endblock %}

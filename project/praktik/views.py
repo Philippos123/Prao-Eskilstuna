@@ -35,6 +35,9 @@ def prao(request):
 def login(request):
     return render(request, 'allauth/login.html')
 
+def logout(request):
+    return render(request, 'allauth/logout.html')
+
 def signup(request):
     return render(request, 'allauth/signup.html')
 
