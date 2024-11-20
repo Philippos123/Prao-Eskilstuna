@@ -33,3 +33,14 @@ class PraoAnnons(models.Model):
 
     def __str__(self):
         return self.rubrik
+    
+# models.py
+class Nyhet(models.Model):
+    titel = models.CharField(max_length=200)  # Fältet heter 'titel', inte 'title'
+    beskrivning = models.TextField()
+    publicerad_datum = models.DateTimeField(auto_now_add=True)
+    användare = models.ForeignKey(User, on_delete=models.CASCADE)
+    bild = models.ImageField(upload_to='nyhetsbilder/', blank=True, null=True)
+
+    def __str__(self):
+        return self.titel  # Använd 'titel' här också

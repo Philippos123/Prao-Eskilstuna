@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages  # För att visa meddelanden
 from .forms import PraoAnnonsForm
-from .models import PraoAnnons
+from .models import *
 
 def home(request):
-    return render(request, 'home.html')
+    nyheter = Nyhet.objects.all()[:5]
+    return render(request, 'home.html', {'nyheter': nyheter})
 
 def prao(request):
     annonser = PraoAnnons.objects.all()  # Hämta alla annonser

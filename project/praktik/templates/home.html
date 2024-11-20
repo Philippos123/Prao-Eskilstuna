@@ -1,21 +1,133 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}Hem - Prao Platser{% endblock %}
+
 
 {% block content %}
 
+<!-- Hero-sektion -->
+<div style="background-color: #f0f8ff; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 20px;">
+    <h1>Välkommen till Prao Platser!</h1>
+    <p>Hitta din nästa prao-plats snabbt och enkelt.</p>
+</div>
 
-<!-- Innehåll på startsidan -->
-<h2>Vad är en prao-plats?</h2>
-<h1>YOOOOOOOO</h1>
-<p>Här kan du beskriva vad en prao-plats är, hur man ansöker, och eventuell annan relevant information.</p>
+<!-- Introduktion -->
+<section style="margin-bottom: 30px;">
+    <h2>Vad är en prao-plats?</h2>
+    <p>En prao-plats är en möjlighet för elever att få inblick i arbetslivet och erfarenhet inom olika branscher. Här kan du hitta tillgängliga platser, läsa mer om dem och ansöka direkt.</p>
+</section>
 
-<h3>Lista över Prao Platser</h3>
-<ul>
-    <li>Prao Plats 1 - Beskrivning av plats 1.</li>
-    <li>Prao Plats 2 - Beskrivning av plats 2.</li>
-    <li>Prao Plats 3 - Beskrivning av plats 3.</li>
-</ul>
+<!-- Lista över Prao Platser -->
+<section style="margin-bottom: 40px;">
+    <h3>Lista över Prao Platser</h3>
+    <ul style="list-style-type: disc; margin-left: 20px;">
+        <li>Prao Plats 1 - Beskrivning av plats 1.</li>
+        <li>Prao Plats 2 - Beskrivning av plats 2.</li>
+        <li>Prao Plats 3 - Beskrivning av plats 3.</li>
+    </ul>
+</section>
+
+<!-- Sektion för senaste nyheterna -->
+<section class="nyhets-sektion">
+    <h2>Senaste Nyheterna</h2>
+    <div class="nyhets-lista">
+        {% for nyhet in nyheter %}
+        <div class="nyhet">
+            <h3>{{ nyhet.titel }}</h3>
+            <p class="nyhet-info"><em>Publicerad: {{ nyhet.publicerad_datum|date:"Y-m-d H:i" }}</em></p>
+            {% if nyhet.bild %}
+            <img src="{{ nyhet.bild.url }}" alt="Bild för {{ nyhet.titel }}" class="nyhet-bild">
+            {% endif %}
+            <p class="nyhet-innehall">{{ nyhet.innehåll|truncatewords:30 }}</p>
+        </div>
+        {% empty %}
+        <p>Inga nyheter tillgängliga just nu.</p>
+        {% endfor %}
+    </div>
+</section>
+<style>
+    /* Grundläggande stil för sektionen */
+    .nyhets-sektion {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Grid layout för att skapa spalter */
+    .nyhets-lista {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tre lika stora kolumner för desktop */
+        gap: 20px;
+    }
+
+    /* Stil för varje nyhet */
+    .nyhet {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    /* Stil för rubrik och information */
+    .nyhet h3 {
+        color: #007BFF;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    .nyhet-info {
+        color: #666;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    /* Stil för bild */
+    .nyhet-bild {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    /* Stil för innehållet */
+    .nyhet-innehall {
+        font-size: 1em;
+        color: #333;
+    }
+
+    /* Responsiv design - När skärmen är mindre än 768px, använd 40% för varje nyhet */
+    @media (max-width: 768px) {
+        .nyhets-lista {
+            grid-template-columns: repeat(2, 1fr); /* 2 kolumner på tablet */
+        }
+    }
+
+    /* För ännu mindre skärmar (t.ex. mobiler), använd 40% för varje nyhet */
+    @media (max-width: 480px) {
+        .nyhets-lista {
+            grid-template-columns: repeat(1, 1fr); /* En kolumn på små skärmar */
+        }
+
+        .nyhet {
+            padding: 10px; /* Minska padding för att spara plats på mobilen */
+        }
+
+        .nyhet h3 {
+            font-size: 1.1em; /* Minska rubrikstorleken på mobiler */
+        }
+
+        .nyhet-info {
+            font-size: 0.85em; /* Minska textstorleken på mobilen */
+        }
+
+        .nyhet-innehall {
+            font-size: 0.9em; /* Minska textstorleken för innehåll på mobilen */
+        }
+    }
+</style>
+
 {% endblock %}

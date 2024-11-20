@@ -86,6 +86,85 @@
         background-color: #218838; /* Mörkare grön vid hover */
         transform: scale(1.05); /* Liten förstoring vid hover */
     }
+    @media (max-width: 768px) {
+        .ad-card {
+            flex-direction: column; /* Ställer bilderna ovanför texten på mindre skärmar */
+        }
+    
+        .ad-image-container {
+            flex: 0 0 100%; /* Gör att bilden tar upp hela bredden på mindre skärmar */
+            margin-bottom: 10px; /* Lägg till lite mellanrum under bilden */
+        }
+    
+        .ad-image {
+            width: 100%; /* Gör bilden fullbredd på mobilen */
+            height: auto; /* Bibehåller bildens proportioner */
+        }
+    
+        .ad-text-container {
+            padding-left: 0; /* Ta bort vänstermarginal för att spara plats på mobilen */
+        }
+    
+        .apply-button {
+            width: 50%; /* Gör knappen fullbredd på mindre skärmar */
+            padding-top: 15px; /* Gör knappen större för enklare klickning på mobilen */
+            padding-bottom: 15px; /* Gör knappen större för enklare klickning på mobilen */
+            padding-right: 0px; /* Ta bort högermarginal för att fylla hela bredden */
+        }
+        input[type="checkbox"] {
+            transform: scale(2.6);}
+    }
+    
+    /* För ännu mindre skärmar, som mobiler i porträttläge */
+    @media (max-width: 480px) {
+        .ad-card {
+            padding: 10px; /* Minska padding för att utnyttja mer plats på mindre skärmar */
+        }
+    
+        .ad-title {
+            font-size: 1.2em; /* Minska storleken på titeln på små skärmar */
+        }
+    
+        .ad-description {
+            font-size: 0.9em; /* Justera storleken på beskrivningen för bättre läsbarhet på små skärmar */
+        }
+    }
+    @media (max-width: 768px) {
+        .filter-form {
+            padding: 10px;
+            margin: 10px;
+        }
+    
+        .filter-form form {
+            gap: 15px; /* Öka avståndet mellan element */
+        }
+    
+        .filter-form input[type="text"] {
+            font-size: 14px; /* Justera textstorleken för mindre skärmar */
+            padding: 12px;
+            width: 100%; /* Gör inputfält fullbredd */
+        }
+    
+        .filter-form div {
+            display: flex;
+            flex-direction: column; /* Stapla checkboxar och rubriker */
+            gap: 10px;
+        }
+    
+        .filter-form button {
+            width: 100%; /* Knappar tar upp hela bredden */
+            font-size: 16px; /* Gör texten större för bättre klickvänlighet */
+            padding: 12px;
+        }
+    }
+    input[type="checkbox"] {
+        width: 20px; /* Öka bredden */
+        height: 20px; /* Öka höjden */
+        transform: scale(1.2); /* Gör checkboxen 1.5 gånger större */
+        margin-right: 1px; /* Lägg till avstånd mellan checkbox och etikett */
+        cursor: pointer; /* Förbättra användarupplevelsen */
+    }
+    
 </style>
 
 <!-- Filtreringsformulär -->
