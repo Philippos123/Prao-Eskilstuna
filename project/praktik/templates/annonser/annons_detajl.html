@@ -13,13 +13,14 @@
         background-color: #ffffff; /* Vit bakgrund */
         border-radius: 8px; /* Rundade hörn */
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Skugga */
+        color: black;
     }
 
     /* Stil för rubriken */
     h1 {
         font-size: 2em; /* Större text för rubriken */
-        color: #007BFF; /* Blå färg för rubriken */
         margin-bottom: 10px; /* Utrymme under rubriken */
+        color: white;
     }
 
     /* Stil för bannerbild */
@@ -91,9 +92,12 @@
             font-size: 1.5em; /* Minska rubrikstorlek på små skärmar */
         }
     }
+    annons-container, h1 {
+        color: black;
+    }
 </style>
 
-<div class="annons-container">
+<div class="annons-container" style="color: black;">
     <h1>{{ annons.rubrik }}</h1>
 
     {% if annons.bild %}

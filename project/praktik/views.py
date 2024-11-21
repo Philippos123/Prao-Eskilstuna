@@ -33,6 +33,7 @@ def prao(request):
     return render(request, 'prao-base.html', {'annonser': annonser})
 
 def login(request):
+    messages.success(request, "Annonsen har uppdaterats.")
     return render(request, 'allauth/login.html')
 
 def logout(request):
@@ -40,6 +41,9 @@ def logout(request):
 
 def signup(request):
     return render(request, 'allauth/signup.html')
+
+def om_oss(request):
+    return render(request, 'om_oss.html')
 
 @login_required
 def skapa_annons(request):

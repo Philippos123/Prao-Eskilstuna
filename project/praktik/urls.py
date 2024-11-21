@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='index'),
+    path('om-oss/', views.om_oss, name='om_oss'),
     path('prao/', views.prao, name='prao'),
     path('accounts/', include('allauth.urls')),
     path('skapa/', views.skapa_annons, name='skapa_annons'),

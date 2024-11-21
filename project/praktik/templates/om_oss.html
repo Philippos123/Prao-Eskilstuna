@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detaljer för {{ annons.rubrik }}{% endblock %}
+
+{% block content %}
+
+<section class="prao-sektion">
+    <h2>Vad är en Prao-Plats?</h2>
+    <p>En prao-plats är en plats där elever kan få praktisk erfarenhet från arbetslivet. Prao-platsbanken i Eskilstuna är skapad för att ge ungdomar möjlighet att hitta och ansöka om prao-platser. Detta initiativ är ett samarbete mellan Agoge AB och lokala företag, och syftar till att skapa en bättre framtid för unga genom att erbjuda värdefulla arbetslivserfarenheter.</p>
+    
+    <table class="prao-tabell">
+        <thead>
+            <tr>
+                <th>Vad är en Prao-Plats?</th>
+                <th>Syfte och Målsättning</th>
+                <th>Fördelar för Ungdomar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>En plats i en arbetsmiljö där elever får praktisk erfarenhet.</td>
+                <td>Att ge ungdomar en första inblick i arbetslivet och hjälpa dem att förstå olika yrken och arbetsuppgifter.</td>
+                <td>Ökad förståelse för arbetslivet, bättre förutsättningar för framtida jobb, och chansen att testa olika yrken.</td>
+            </tr>
+            <tr>
+                <td>En samlad platsbank för alla tillgängliga prao-platser i Eskilstuna.</td>
+                <td>Att förenkla för elever att hitta prao-platser genom att samla alla tillgängliga erbjudanden på ett ställe.</td>
+                <td>Enkel tillgång till ett brett urval av prao-platser som passar olika intressen och behov.</td>
+            </tr>
+            <tr>
+                <td>Skapad ideellt av Agoge AB för att bidra till ett bättre samhälle.</td>
+                <td>Att främja ungdomars utveckling genom att ge dem möjlighet att få arbetslivserfarenhet och skapa kontakter.</td>
+                <td>Stöd i att ta de första stegen mot yrkeslivet, samt utveckling av viktiga arbetslivsfärdigheter.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<style>
+    .prao-sektion {
+        margin-top: 30px;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Stil för rubriker i prao-sektionen */
+    .prao-sektion h2 {
+        color: #007BFF;
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Stil för textinnehåll */
+    .prao-sektion p {
+        font-size: 1.1em;
+        color: #333;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    /* Stil för listor i prao-sektionen */
+    .prao-sektion ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .prao-sektion ul li {
+        margin-bottom: 15px;
+    }
+
+    /* Stil för punktlistor med tips */
+    .prao-sektion ul li strong {
+        color: #007BFF;
+    }
+
+    .prao-tabell {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .prao-tabell th, .prao-tabell td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .prao-tabell th {
+        background-color: #007BFF;
+        color: #ffffff;
+        font-size: 1.1em;
+    }
+
+    .prao-tabell td {
+        background-color: #f9f9f9;
+    }
+
+    /* Responsiv design - För mindre skärmar */
+    @media (max-width: 768px) {
+        .prao-sektion {
+            padding: 20px;
+        }
+
+        .prao-sektion h2 {
+            font-size: 1.7em;
+        }
+
+        .prao-sektion p {
+            font-size: 1em;
+        }
+
+        .prao-tabell th, .prao-tabell td {
+            padding: 10px;
+        }
+    }
+
+    /* För ännu mindre skärmar (mobiler) */
+    @media (max-width: 480px) {
+        .prao-sektion {
+            padding: 15px;
+        }
+
+        .prao-sektion h2 {
+            font-size: 1.5em;
+        }
+
+        .prao-sektion p {
+            font-size: 0.95em;
+        }
+
+        .prao-tabell th, .prao-tabell td {
+            padding: 8px;
+            font-size: 0.9em;
+        }
+    }
+</style>
+{% endblock %}

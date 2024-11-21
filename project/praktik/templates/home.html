@@ -3,25 +3,47 @@
 
 {% block title %}Hem - Prao Platser{% endblock %}
 
-
 {% block content %}
-
-
 <!-- Introduktion -->
-<section style="margin-bottom: 30px;">
-    <h2>Vad är en prao-plats?</h2>
-    <p>En prao-plats är en möjlighet för elever att få inblick i arbetslivet och erfarenhet inom olika branscher. Här kan du hitta tillgängliga platser, läsa mer om dem och ansöka direkt.</p>
+
+<section class="cta-sektion">
+    <h2>Letar du efter en Prao-Plats?</h2>
+    <p>Få praktisk erfarenhet och utforska olika yrken genom att hitta din prao-plats idag. Klicka här för att se tillgängliga prao-platser i Eskilstuna!</p>
+    <a href="{% url 'prao' %}" class="cta-knapp">Hitta Prao Platser</a>
 </section>
 
-<!-- Lista över Prao Platser -->
-<section style="margin-bottom: 40px;">
-    <h3>Lista över Prao Platser</h3>
-    <ul style="list-style-type: disc; margin-left: 20px;">
-        <li>Prao Plats 1 - Beskrivning av plats 1.</li>
-        <li>Prao Plats 2 - Beskrivning av plats 2.</li>
-        <li>Prao Plats 3 - Beskrivning av plats 3.</li>
+
+<section class="prao-sektion">
+    <h2>Vad är Prao?</h2>
+    <p>Prao, eller Praktisk Arbetslivsorientering, är en fantastisk möjlighet för dig som elev att få en försmak på arbetslivet. Det handlar om att få testa på olika yrken, lära dig nya färdigheter och utforska vad som intresserar dig. Under prao-veckorna får du vara på en riktig arbetsplats, vilket ger dig ovärderlig erfarenhet och insikter som kan påverka ditt framtida yrkesval.</p>
+</section>
+
+<section class="prao-sektion">
+    <h2>Varför är Prao så viktigt?</h2>
+    <p>Att göra prao är inte bara ett krav – det är en chans att verkligen utforska världen utanför skolbänken. Här är några av de största fördelarna:</p>
+    <ul>
+        <li><strong>Få en inblick i arbetslivet:</strong> Du får förstå hur en riktig arbetsplats fungerar och vad som krävs av en arbetstagare.</li>
+        <li><strong>Bygg erfarenhet:</strong> Även om du inte vet vad du vill göra i framtiden, ger prao dig värdefull arbetslivserfarenhet som kan vara användbar för framtida jobb och utbildningar.</li>
+        <li><strong>Testa olika yrken:</strong> Prao ger dig möjligheten att prova på flera olika arbetsområden och hjälper dig att hitta vad du gillar – eller inte gillar!</li>
+        <li><strong>Bygg ditt nätverk:</strong> Du får chans att träffa och lära känna människor i branschen, vilket kan vara värdefullt när du senare söker jobb.</li>
     </ul>
 </section>
+
+<section class="prao-sektion">
+    <h2>Så här gör du för att hitta rätt Prao-plats!</h2>
+    <p>När du söker prao, tänk på att du faktiskt kan påverka vad du gör och var du gör det. Här är några tips på vad du bör tänka på för att göra din prao-upplevelse så bra som möjligt:</p>
+    <ul>
+        <li><strong>Välj en plats som intresserar dig:</strong> Vad brinner du för? Vill du jobba med människor, teknik, natur eller kanske något helt annat? Att välja rätt plats gör att du får ut mer av din prao.</li>
+        <li><strong>Skicka din ansökan direkt till företaget:</strong> När du har hittat en prao-plats som intresserar dig, skriv en personlig ansökan och ett brev där du förklarar varför du skulle passa för just den arbetsplatsen. Tänk på att vara tydlig, professionell och visa ditt intresse för företaget och arbetet du kommer att göra.</li>
+        <li><strong>Var öppen och flexibel:</strong> Det kan vara bra att prova på något nytt, även om det inte var det du först tänkt dig. Ibland kan en oväntad prao-plats bli en riktig ögonöppnare.</li>
+        <li><strong>Förbered dig:</strong> När du har fått din prao-plats, ta reda på så mycket du kan om företaget och vad du kommer att göra. Ju mer förberedd du är, desto bättre kommer du att kunna ta till dig erfarenheten och göra ett bra intryck.</li>
+    </ul>
+    <p>Kom ihåg – prao handlar om att lära sig, växa och ha kul! Det är ett första steg mot en framtid fylld av möjligheter.</p>
+</section>
+
+    
+
+
 
 <!-- Sektion för senaste nyheterna -->
 <section class="nyhets-sektion">
@@ -40,6 +62,13 @@
         <p>Inga nyheter tillgängliga just nu.</p>
         {% endfor %}
     </div>
+</section>
+
+<section class="registrera-företag-sektion">
+    <h2>Vill ditt företag erbjuda Prao-platser?</h2>
+    <p>Som företag har du möjlighet att göra en verklig skillnad i ungdomars liv genom att erbjuda prao-platser. Genom att registrera ditt företag får du möjlighet att bidra till framtidens arbetskraft och hjälpa unga att få värdefull arbetslivserfarenhet.</p>
+    <p>Att erbjuda en prao-plats är ett fantastiskt sätt att engagera sig i samhället, och det är enklare än du tror. Fyll i formuläret och gör ditt företag till en del av denna viktiga satsning!</p>
+    <a href="#" class="registrera-knapp">Registrera Företaget</a>
 </section>
 
 <style>
@@ -124,7 +153,189 @@
             font-size: 0.9em; /* Minska textstorleken för innehåll på mobilen */
         }
     }
-</style>
+    /* Grundläggande stil för sektionen */
+    .prao-sektion {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
 
+    /* Stil för rubriker i prao-sektionerna */
+    .prao-sektion h2 {
+        color: #007BFF;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    /* Stil för textinnehåll */
+    .prao-sektion p, .prao-sektion ul {
+        font-size: 1em;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* Stil för listor i prao-sektionen */
+    .prao-sektion ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .prao-sektion ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Stil för punktlistor med tips */
+    .prao-sektion ul li strong {
+        color: #007BFF;
+    }
+
+    /* Responsiv design - När skärmen är mindre än 768px, använd 2 kolumner */
+    @media (max-width: 768px) {
+        .prao-sektion {
+            padding: 15px;
+        }
+
+        .prao-sektion h2 {
+            font-size: 1.5em;
+        }
+
+        .prao-sektion p, .prao-sektion ul {
+            font-size: 0.95em;
+        }
+    }
+
+    /* För ännu mindre skärmar (t.ex. mobiler), använd en kolumn */
+    @media (max-width: 480px) {
+        .prao-sektion {
+            padding: 10px;
+        }
+
+        .prao-sektion h2 {
+            font-size: 1.3em;
+        }
+
+        .prao-sektion p, .prao-sektion ul {
+            font-size: 0.9em;
+        }
+    }
+    .prao-tabell {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .prao-tabell th, .prao-tabell td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .prao-tabell th {
+        background-color: #007BFF;
+        color: #ffffff;
+        font-size: 1.1em;
+    }
+
+    .prao-tabell td {
+        background-color: #f9f9f9;
+    }
+
+    /* Responsiv design - För mindre skärmar */
+    @media (max-width: 768px) {
+        .prao-tabell th, .prao-tabell td {
+            padding: 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .prao-tabell th, .prao-tabell td {
+            padding: 6px;
+            font-size: 0.9em;
+        }
+    }
+    .cta-sektion {
+        background-color: #f0f8ff; /* Ljus bakgrund för att skapa en frisk känsla */
+        padding: 40px;
+        text-align: center; /* Centrerar innehållet */
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ger en lätt skugga för att lyfta sektionen */
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-sektion h2 {
+        font-size: 2em;
+        color: #007BFF; /* Färgglad rubrik */
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .cta-sektion p {
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 30px; /* Mer utrymme mellan texten och knappen */
+    }
+
+    .cta-knapp {
+        background-color: #823789; /* Färgstark knapp */
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .cta-knapp:hover {
+        background-color: #461d4a;
+    }
+
+    /* Responsiv design */
+    @media (max-width: 768px) {
+        .cta-sektion {
+            padding: 30px;
+        }
+
+        .cta-sektion h2 {
+            font-size: 1.7em;
+        }
+
+        .cta-sektion p {
+            font-size: 1.1em;
+        }
+
+        .cta-knapp {
+            font-size: 1.1em;
+            padding: 12px 25px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cta-sektion {
+            padding: 20px;
+        }
+
+        .cta-sektion h2 {
+            font-size: 1.5em;
+        }
+
+        .cta-sektion p {
+            font-size: 1em;
+        }
+
+        .cta-knapp {
+            font-size: 1em;
+            padding: 10px 20px;
+        }
+    }
+</style>
 
 {% endblock %}

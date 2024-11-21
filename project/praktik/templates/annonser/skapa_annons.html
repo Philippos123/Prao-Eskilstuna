@@ -10,7 +10,17 @@
         {{ form.as_p }}  <!-- Visar formulärfälten -->
     </div>
     
-    <button type="submit" class="btn btn-primary mt-3">Lägg upp annons</button>
+    <button type="submit" class="btn btn-secondary mt-2" style="
+    /* background-color: #823789; */
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #823789;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+">Lägg upp annons</button>
 </form>
 <a href="{% url 'prao' %}" class="btn btn-secondary mt-2">Tillbaka till annonser</a>
 {% endblock %}
