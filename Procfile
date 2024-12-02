@@ -1,1 +1,1 @@
-gunicorn --chdir project core.wsgi:application
+gunicorn core.wsgi:application
