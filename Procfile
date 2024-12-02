@@ -1,1 +1,1 @@
-gunicorn core.wsgi:application
+gunicorn project.wsgi:application
