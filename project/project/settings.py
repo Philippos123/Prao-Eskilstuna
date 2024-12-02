@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1d3pg!@gjl1e-^q$srhk@%n-2$8*1(&3g=!qwhg$k*bf03ou*q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,7 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
 STATICFILES_DIRS = [BASE_DIR / "static"]  # Korrekt sökväg till din statiska mapp
 
 
