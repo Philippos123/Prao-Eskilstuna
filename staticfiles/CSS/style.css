@@ -332,3 +332,8 @@ a.btn {
     border: 1px solid transparent; /* Border för att matcha knappar */
     border-radius: 0.25rem; /* Samma hörnradie */
 }
+
+.content {
+    display: flex !important;
+    
+}
