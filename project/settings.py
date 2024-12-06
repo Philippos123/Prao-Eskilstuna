@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1d3pg!@gjl1e-^q$srhk@%n-2$8*1(&3g=!qwhg$k*bf03ou*q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['eskilstunaprao.herokuapp.com']
+ALLOWED_HOSTS = ['eskilstunaprao.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -90,7 +90,7 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://your_default_url', 
+        default='postgres://u2ts2lvkkveu11:pd034780a4ff3f083137ec57a6fed89b60bbe20fbeda3d4fbffbb24040750319c@c9uss87s9bdb8n.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dde5k6bo8veh3h', 
         conn_max_age=600
     )
 }
