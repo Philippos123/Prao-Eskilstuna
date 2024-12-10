@@ -38,11 +38,7 @@
         padding-left: 15px; /* Avstånd mellan bild och text */
     }
 
-    .ad-title {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-        color: #007BFF; /* Blå färg för rubriker */
-    }
+    
 
     .ad-description {
         margin-bottom: 15px;
@@ -221,7 +217,10 @@
     </section>
     <div>
         <div class="ad-text-container">
-            <div>{{ annons.rubrik }}</div>
+            <div style="
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007BFF; /* Blå färg för rubriker */">{{ annons.rubrik }}</div>
             <div class="ad-description">{{ annons.beskrivning|truncatewords:30 }}</div>
             <div class="ad-info">
                 <div class="ad-info-item"><strong>Företag:</strong> {{ annons.företag }}</div>
