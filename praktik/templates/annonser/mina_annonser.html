@@ -91,7 +91,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;">
         <div class="ad-text-container">
-            <h3 class="ad-title">{{ annons.rubrik }}</h3>
+            <div style="
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007BFF; /* Blå färg för rubriker */">{{ annons.rubrik }}</div>
             <p class="ad-description">{{ annons.beskrivning }}</p>
             <div class="ad-info">
                 <div class="ad-info-item">Företag: {{ annons.företag }}</div>
