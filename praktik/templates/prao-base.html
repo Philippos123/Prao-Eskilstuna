@@ -218,7 +218,7 @@
 
     {% for annons in annonser %}
     <section class="ad-card">
-        
+    </section>
         <div class="ad-text-container">
             <div class="ad-title">{{ annons.rubrik }}</div>
             <div class="ad-description">{{ annons.beskrivning|truncatewords:30 }}</div>
@@ -230,7 +230,7 @@
             </div>
             <a href="{% url 'annons_detajl' annons.id %}" class="apply-button">Ansök här</a>
         </div>
-    </section>
+    
     {% empty %}
     <p>Inga annonser tillgängliga just nu.</p>
     {% endfor %}
