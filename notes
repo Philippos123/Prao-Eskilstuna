@@ -1,0 +1,7 @@
+<!--<div class="ad-image-container">
+            {% if annons.bild %}
+                <img src="{{ annons.bild.url }}" alt="Banner för {{ annons.rubrik }}" class="ad-image">
+
+                {% else %}
+                <p>Ingen bild tillgänglig</p>
+            {% endif %} -->

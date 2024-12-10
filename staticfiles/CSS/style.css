@@ -333,18 +333,8 @@ a.btn {
     border-radius: 0.25rem; /* Samma hörnradie */
 }
 
-.content {
-    display: flex !important;
-}
-
-.ad-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: blue;
-}
-
 .ad-card {
-    display: block !important; /* Använd flexbox för att placera bild och text sida vid sida */
+    display: flex !important; /* Använd flexbox för att placera bild och text sida vid sida */
     background-color: #ffffff !important;
     border: 1px solid #ddd !important;
     border-radius: 8px;
