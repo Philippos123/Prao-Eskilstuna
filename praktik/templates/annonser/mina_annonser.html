@@ -82,24 +82,31 @@
 <!-- Container för annonser -->
 <div class="ads-container">
     {% for annons in annonser %}
-           
-            <div class="ad-text-container">
-                <h3 class="ad-title">{{ annons.rubrik }}</h3>
-                <p class="ad-description">{{ annons.beskrivning }}</p>
-                <div class="ad-info">
-                    <div class="ad-info-item">Företag: {{ annons.företag }}</div>
-                    <div class="ad-info-item">Kontaktperson: {{ annons.kontaktperson }}</div>
-                    <div class="ad-info-item">Email: {{ annons.email }}</div>
-                    <div class="ad-info-item">Telefon: {{ annons.telefon }}</div>
-                    <div class="ad-info-item">Annons typ: {{ annons.annons_typ }}</div>
-                    <div class="ad-info-item">Bransch: {{ annons.bransch }}</div>
-                    <div class="ad-info-item">Publicerad: {{ annons.publicerad }}</div>
-                    <div class="ad-info-item">Adress: {{ annons.adress }}</div>
-                </div>
+    <div style="display: flex !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;">
+        <div class="ad-text-container">
+            <h3 class="ad-title">{{ annons.rubrik }}</h3>
+            <p class="ad-description">{{ annons.beskrivning }}</p>
+            <div class="ad-info">
+                <div class="ad-info-item">Företag: {{ annons.företag }}</div>
+                <div class="ad-info-item">Kontaktperson: {{ annons.kontaktperson }}</div>
+                <div class="ad-info-item">Email: {{ annons.email }}</div>
+                <div class="ad-info-item">Telefon: {{ annons.telefon }}</div>
+                <div class="ad-info-item">Annons typ: {{ annons.annons_typ }}</div>
+                <div class="ad-info-item">Bransch: {{ annons.bransch }}</div>
+                <div class="ad-info-item">Publicerad: {{ annons.publicerad }}</div>
+                <div class="ad-info-item">Adress: {{ annons.adress }}</div>
                 <a href="{% url 'edit_annons' annons_id=annons.id %}" class="apply-button">Redigera</a> |
                 <a href="{% url 'radera_annons' annons_id=annons.id %}" class="apply-button" style="background-color: #dc3545;">Ta bort</a>
             </div>
         </div>
+    </div>
     {% empty %}
         <p>Du har inga annonser.</p>
     {% endfor %}
