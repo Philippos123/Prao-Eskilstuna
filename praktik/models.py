@@ -29,7 +29,6 @@ class PraoAnnons(models.Model):
     publicerad_datum = models.DateTimeField(auto_now_add=True)
     adress = models.CharField(max_length=255, null=True, blank=True)
     användare = models.ForeignKey(User, on_delete=models.CASCADE)
-    bild = models.ImageField(upload_to='prao_annonsbilder/', blank=True, null=True)
 
     def __str__(self):
         return self.rubrik

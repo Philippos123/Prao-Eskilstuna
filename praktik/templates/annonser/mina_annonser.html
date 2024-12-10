@@ -93,12 +93,12 @@
 <div class="ads-container">
     {% for annons in annonser %}
         <div class="ad-card">
-            <div class="ad-image-container">
+           <!-- <div class="ad-image-container">
                 {% if annons.bild %}
                     <img src="{{ annons.bild.url }}" alt="{{ annons.rubrik }}" class="ad-image">
                 {% else %}
-                    <img src="{% static 'default_image.jpg' %}" alt="Ingen bild" class="ad-image">  <!-- Placeholder-bild -->
-                {% endif %}
+                    <img src="{% static 'default_image.jpg' %}" alt="Ingen bild" class="ad-image">   Placeholder-bild 
+                {% endif %} -->
             </div>
             <div class="ad-text-container">
                 <h3 class="ad-title">{{ annons.rubrik }}</h3>

@@ -228,13 +228,13 @@
 
     {% for annons in annonser %}
     <div class="ad-card">
-        <div class="ad-image-container">
+        <!--<div class="ad-image-container">
             {% if annons.bild %}
                 <img src="{{ annons.bild.url }}" alt="Banner för {{ annons.rubrik }}" class="ad-image">
 
                 {% else %}
                 <p>Ingen bild tillgänglig</p>
-            {% endif %}
+            {% endif %} -->
         </div>
         <div class="ad-text-container">
             <div class="ad-title">{{ annons.rubrik }}</div>
