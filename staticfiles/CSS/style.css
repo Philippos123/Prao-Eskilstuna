@@ -342,3 +342,14 @@ a.btn {
     margin-bottom: 10px;
     color: blue;
 }
+
+.ad-card {
+    display: block !important; /* Använd flexbox för att placera bild och text sida vid sida */
+    background-color: #ffffff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
