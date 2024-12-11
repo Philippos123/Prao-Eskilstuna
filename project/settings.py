@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback_secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['eskilstunaprao-2f3dc07a888c.herokuapp.com', '127.0.0.1']
 
@@ -34,6 +34,8 @@ ALLOWED_HOSTS = ['eskilstunaprao-2f3dc07a888c.herokuapp.com', '127.0.0.1']
 INSTALLED_APPS = [
     'praktik',
     'django.contrib.admin',
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -137,9 +139,18 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = []
 
 
+# Base url to serve media files  
 MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+  
+# Path where media is stored  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dhpnihgnt',
+    'API_KEY': '755522193739316',
+    'API_SECRET': 'CkWGxxSi-cC2nWVOC0jtdbYFkMk',
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

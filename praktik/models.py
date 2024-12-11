@@ -1,4 +1,6 @@
 from django.db import models
+import os
+import logging
 from django.contrib.auth.models import User
     
 
@@ -33,13 +35,24 @@ class PraoAnnons(models.Model):
     def __str__(self):
         return self.rubrik
     
+def news_image_path(instance, filename):
+    ext = filename.split('.')[-1]  # Get the file extension
+    filename = f"{instance.title.replace(' ', '_')}_image.{ext}"
+
+    logger = logging.getLogger(__name__)
+    logger.info(f"Instance title: {instance.title}")
+    logger.info(f"Generated filename: {filename}")
+
+    return os.path.join('news_images', filename)
+
+
 # models.py
 class Nyhet(models.Model):
     titel = models.CharField(max_length=200)  # Fältet heter 'titel', inte 'title'
     beskrivning = models.TextField()
     publicerad_datum = models.DateTimeField(auto_now_add=True)
     användare = models.ForeignKey(User, on_delete=models.CASCADE)
-    bild = models.ImageField(upload_to='nyhetsbilder/', blank=True, null=True)
+    bild = models.ImageField(upload_to=news_image_path)
 
     def __str__(self):
         return self.titel  # Använd 'titel' här också

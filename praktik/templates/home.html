@@ -18,6 +18,24 @@
     <p>Prao, eller Praktisk Arbetslivsorientering, är en fantastisk möjlighet för dig som elev att få en försmak på arbetslivet. Det handlar om att få testa på olika yrken, lära dig nya färdigheter och utforska vad som intresserar dig. Under prao-veckorna får du vara på en riktig arbetsplats, vilket ger dig ovärderlig erfarenhet och insikter som kan påverka ditt framtida yrkesval.</p>
 </section>
 
+<section class="nyhets-sektion">
+    <h2>Senaste Nyheterna</h2>
+    <div class="nyhets-lista">
+        {% for nyhet in nyheter %}
+        <div class="nyhet">
+            <h3>{{ nyhet.titel }}</h3>
+            <p class="nyhet-info"><em>Publicerad: {{ nyhet.publicerad_datum|date:"Y-m-d H:i" }}</em></p>
+            {% if nyhet.bild %}
+            <img src="{{ nyhet.bild.url }}" alt="Bild för {{ nyhet.titel }}" class="nyhet-bild">
+            {% endif %}
+            <p class="nyhet-innehall">{{ nyhet.innehåll|truncatewords:30 }}</p>
+        </div>
+        {% empty %}
+        <p>Inga nyheter tillgängliga just nu.</p>
+        {% endfor %}
+    </div>
+</section>
+
 <section class="prao-sektion">
     <h2>Varför är Prao så viktigt?</h2>
     <p>Att göra prao är inte bara ett krav – det är en chans att verkligen utforska världen utanför skolbänken. Här är några av de största fördelarna:</p>
