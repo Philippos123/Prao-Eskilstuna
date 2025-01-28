@@ -222,6 +222,13 @@
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;">
+    <div class="ad-image-container">
+        {% if annons.bild %}
+            <img src="{{ annons.bild.url }}" alt="{{ annons.rubrik }}" class="ad-image">
+        {% else %}
+            <p>Ingen bild tillgänglig</p> <!-- Fallback om det inte finns någon bild -->
+        {% endif %}
+    </div>
         <div class="ad-text-container">
             <div style="
     font-size: 1.5em;

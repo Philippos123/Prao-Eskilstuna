@@ -22,7 +22,7 @@ class PraoAnnons(models.Model):
     företag = models.CharField(max_length=255)
     rubrik = models.CharField(max_length=255)
     beskrivning = models.TextField()
-    org_nummer = models.CharField(max_length=12, null=True, blank=True)
+    bild = models.ImageField(upload_to='prao_images', null=True, blank=True)
     kontaktperson = models.CharField(max_length=255)
     email = models.EmailField()
     telefon = models.CharField(max_length=20)
