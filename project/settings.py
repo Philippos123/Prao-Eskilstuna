@@ -148,8 +148,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dhpnihgnt',
-    'API_KEY': '755522193739316',
-    'API_SECRET': 'CkWGxxSi-cC2nWVOC0jtdbYFkMk',
+    'API_KEY': '847139766522681',
+    'API_SECRET': 'dqJPV9ZReTt2MZjWbKlYq8Q74ds',
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
