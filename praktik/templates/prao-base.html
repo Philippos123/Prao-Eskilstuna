@@ -13,16 +13,6 @@
         padding: 0;
     }
 
-    .ad-card-container {
-        display: flex;
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        margin: 20px;
-        padding: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
     
     /* Stil för annonskort */
 
@@ -87,16 +77,7 @@
         .ad-card {
             flex-direction: column; /* Ställer bilderna ovanför texten på mindre skärmar */
         }
-        .ad-card-container {
-            display: block;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin: 20px;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+        
     
         .ad-image-container {
             flex: 0 0 90%; /* Gör att bilden tar upp hela bredden på mindre skärmar */
@@ -234,6 +215,7 @@
     <h2>Tillgängliga Prao Platser</h2>
 
     {% for annons in annonser %}
+
     <div style="display: flex !important;
     background-color: #ffffff !important;
     border: 1px solid #ddd !important;
@@ -242,13 +224,13 @@
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;">
-        <div class="ad-image-container">
-            {% if annons.bild %}
-                <img src="{{ annons.bild.url }}" alt="{{ annons.rubrik }}" class="ad-image">
-            {% else %}
-                <p>Ingen bild tillgänglig</p> <!-- Fallback om det inte finns någon bild -->
-            {% endif %}
-        </div>
+    <div class="ad-image-container">
+        {% if annons.bild %}
+            <img src="{{ annons.bild.url }}" alt="{{ annons.rubrik }}" class="ad-image">
+        {% else %}
+            <p>Ingen bild tillgänglig</p> <!-- Fallback om det inte finns någon bild -->
+        {% endif %}
+    </div>
         <div class="ad-text-container">
             <div class="ad-title">{{ annons.rubrik }}</div>
             <div class="ad-description">{{ annons.beskrivning|truncatewords:30 }}</div>
