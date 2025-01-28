@@ -37,10 +37,10 @@ class PraoAnnons(models.Model):
     
 def news_image_path(instance, filename):
     ext = filename.split('.')[-1]  # Get the file extension
-    filename = f"{instance.title.replace(' ', '_')}_image.{ext}"
+    filename = f"{instance.titel.replace(' ', '_')}_image.{ext}"
 
     logger = logging.getLogger(__name__)
-    logger.info(f"Instance title: {instance.title}")
+    logger.info(f"Instance title: {instance.titel}")
     logger.info(f"Generated filename: {filename}")
 
     return os.path.join('news_images', filename)

@@ -64,23 +64,6 @@
 
 
 <!-- Sektion för senaste nyheterna -->
-<section class="nyhets-sektion">
-    <h2>Senaste Nyheterna</h2>
-    <div class="nyhets-lista">
-        {% for nyhet in nyheter %}
-        <div class="nyhet">
-            <h3>{{ nyhet.titel }}</h3>
-            <p class="nyhet-info"><em>Publicerad: {{ nyhet.publicerad_datum|date:"Y-m-d H:i" }}</em></p>
-            {% if nyhet.bild %}
-            <img src="{{ nyhet.bild.url }}" alt="Bild för {{ nyhet.titel }}" class="nyhet-bild">
-            {% endif %}
-            <p class="nyhet-innehall">{{ nyhet.innehåll|truncatewords:30 }}</p>
-        </div>
-        {% empty %}
-        <p>Inga nyheter tillgängliga just nu.</p>
-        {% endfor %}
-    </div>
-</section>
 
 <section class="registrera-företag-sektion">
     <h2>Vill ditt företag erbjuda Prao-platser?</h2>
