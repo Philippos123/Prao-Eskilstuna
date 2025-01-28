@@ -234,8 +234,14 @@
     <h2>Tillgängliga Prao Platser</h2>
 
     {% for annons in annonser %}
-    
-    <div class="ad-card-container">
+    <div style="display: flex !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;">
         <div class="ad-image-container">
             {% if annons.bild %}
                 <img src="{{ annons.bild.url }}" alt="{{ annons.rubrik }}" class="ad-image">
@@ -252,7 +258,7 @@
                 <div class="ad-info-item"><strong>Annons Typ: {{ annons.annons_typ }}</strong></div>
                 <div class="ad-info-item"><strong>Bransch:</strong> {{ annons.bransch_typ }}</div>
             </div>
-            <a href="{% url 'annons_detajl' annons.id %}" class="apply-button">Kolla på denna annons</a>
+            <a href="{% url 'annons_detajl' annons.id %}" class="apply-button">Kolla på denna</a>
         </div>
     </div>
     
