@@ -30,7 +30,7 @@
     }
 
     .banner img {
-        max-width: 100%; /* Bilden fyller hela bredden av containern */
+        max-width: 80%; /* Bilden fyller hela bredden av containern */
         height: auto; /* Bibehålla proportionerna */
         border-radius: 8px; /* Rundade hörn på bilden */
     }
@@ -107,18 +107,16 @@
     {% endif %}
 
     <div class="info-item">
-        <strong class="foretag-header">{{ annons.företag }}</strong>
-        <strong class="foretag-header">{{ annons.annons_typ }}</strong>
-        <strong class="foretag-header">{{ annons.bransch }}</strong>
+        <h3><strong class="foretag-header">{{ annons.företag }}-</strong></h3>
+        <h3><strong class="foretag-header">{{ annons.annons_typ }}</strong></h3>
     </div>
 
     <div class="description">
+        <strong class="foretag-header">{{ annons.bransch_typ }}</strong>
         <p><strong class="description-header">Beskrivning:</strong></p>
         <p>{{ annons.beskrivning }}</p>
-        <h2>Organisatiosnumer</h2>
-        <p>{{ annons.org_nummer }}</p>
     </div>
-
+    {% if user.is_authenticated %}
     <div class="contact-info">
         <h2>Kontaktinformation</h2>
         <div class="info-item">
@@ -137,6 +135,11 @@
             <strong>Publicerad:</strong> {{ annons.publicerad_datum }}
         </div>
     </div>
+        {% else %}
+            <div class="contact-info">
+                <h2>Kontakta din SYV ifall detta företaget låter intressant eller logga in </h2>
+            </div><br>
+        {% endif %}
 
     <a href="{% url 'prao' %}" class="back-button">Tillbaka till listan</a>
 </div>

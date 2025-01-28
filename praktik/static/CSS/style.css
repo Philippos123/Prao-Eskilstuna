@@ -180,7 +180,7 @@
 /* Bannerbild */
 .banner img {
     width: 100%; /* Gör bilden responsiv och tar upp hela bredden */
-    height: 350px; /* Sätt en fast höjd för att få en avlång banner */
+    height: auto; /* Sätt en fast höjd för att få en avlång banner */
     object-fit: cover; /* Gör att bilden fyller ut rutan utan att förvrängas */
     border-radius: 10px 10px 0 0; /* Rundade hörn */
 }
@@ -305,7 +305,7 @@ strong {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 15px;
-    background-color: #218838;
+    background-color: #1badb8;
     color: white;
     text-decoration: none;
     border-radius: 5px;
