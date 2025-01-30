@@ -16,34 +16,85 @@
         
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4; /* Ljus bakgrundsfärg */
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
         
         /* Stil för navbar */
         nav {
-            background-color: #136e75; 
+            background-color: #136e75;
             color: white;
             padding: 15px;
             text-align: center;
+            position: relative;
         }
-        
-        nav a {
+
+        a {
             color: white;
-            background-color: #136e75;
-            margin: 0 15px;
             text-decoration: none;
+            background-color: #136e75;
         }
-        
-        nav a:hover {
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 60px;
+            color: white;
+            cursor: pointer;
+            top: 15px;
+            left: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .nav-links a:hover {
             text-decoration: underline;
             background-color: #1badb8;
         }
 
+        /* Responsiv design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #136e75;
+                position: absolute;
+                width: 100%;
+                top: 50px;
+                left: 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px;
+                font-size: x-large;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+        }
+
         /* Stil för header */
         header {
-            background-color: #1badb8; /* Mörkare grön färg */
+            background-color: #1badb8;
             color: white;
             padding: 20px;
             text-align: center;
@@ -51,26 +102,14 @@
 
         /* Stil för footer */
         footer {
-            background-color: #1badb8; /* Grön färg */
+            background-color: #1badb8;
             color: white;
             text-align: center;
             padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
             margin-top: 20px;
         }
 
-        /* Stil för innehållet */
-        .content1 {
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: white;
-        }
-
-        /* Popup-meddelanden */
+        /* Stil för popup-meddelanden */
         #popup-message-container {
             position: fixed;
             top: 20px;
@@ -79,26 +118,18 @@
         }
 
         .popup-message {
-            background-color: #4caf50; /* Grön bakgrund för framgångsmeddelanden */
+            background-color: #4caf50;
             color: white;
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             margin-bottom: 10px;
-            animation: fadeOut 3s forwards; /* Fade out animation */
+            animation: fadeOut 3s forwards;
         }
 
-        .popup-message.error {
-            background-color: #f44336;
-        }
-
-        .popup-message.info {
-            background-color: #2196f3;
-        }
-
-        .popup-message.warning {
-            background-color: #ff9800;
-        }
+        .popup-message.error { background-color: #f44336; }
+        .popup-message.info { background-color: #2196f3; }
+        .popup-message.warning { background-color: #ff9800; }
 
         @keyframes fadeOut {
             0% { opacity: 1; }
@@ -110,19 +141,19 @@
 <body>
     <!-- Navigeringsfält -->
     <nav>
-        <a href="{% url 'index' %}">Hem</a>
-        <a href="{% url 'om_oss' %}">Om oss</a>
-        <a href="{% url 'prao' %}">Prao Platser</a>
-        <a href="#kontakt">Kontakt</a>
-    
-        {% if user.is_authenticated %}
-            <a href="{% url 'skapa_annons' %}">Skapa Annons</a>
-            <a href="{% url 'mina_annonser' %}">Mina Annonser</a>
-            <a href="{% url 'account_logout' %}">Logga Ut</a>
-        {% else %}
-            <a href="{% url 'account_login' %}">Login</a>
-            <a href="{% url 'account_signup' %}">Registrera</a>
-        {% endif %}
+        <button class="menu-toggle">&#9776;</button>
+        <div class="nav-links">
+            <a href="{% url 'index' %}">Hem</a>
+            <a href="{% url 'om_oss' %}">Om oss</a>
+            <a href="{% url 'prao' %}">Prao Platser</a>        
+            {% if user.is_authenticated %}
+                <a href="{% url 'skapa_annons' %}">Skapa Annons</a>
+                <a href="{% url 'mina_annonser' %}">Mina Annonser</a>
+                <a href="{% url 'account_logout' %}">Logga Ut</a>
+            {% else %}
+                <a href="{% url 'account_login' %}">Login</a>
+            {% endif %}
+        </div>
     </nav>
 
     <!-- Header -->
@@ -150,10 +181,22 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy;2024 Prao-platser är ett ideellt arbeta som har skapats av Agoge AB. Alla rättigheter förbehållna till Agoge AB.</p>
+        <p>&copy;2024 Prao-platser är ett ideellt arbete som har skapats av Agoge AB. Alla rättigheter förbehållna till Agoge AB.</p>
     </footer>
 
-    <!-- JavaScript för att dölja popup -->
+    <!-- JavaScript för hamburgermeny -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("show");
+            });
+        });
+    </script>
+
+    <!-- JavaScript för att dölja popup-meddelanden -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const messages = document.querySelectorAll(".popup-message");

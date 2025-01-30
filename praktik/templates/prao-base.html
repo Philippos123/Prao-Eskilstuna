@@ -130,7 +130,6 @@
         .filter-form input[type="text"] {
             font-size: 14px; /* Justera textstorleken för mindre skärmar */
             padding: 12px;
-            width: 100%; /* Gör inputfält fullbredd */
         }
     
         .filter-form div {
@@ -152,8 +151,44 @@
         margin-right: 1px; /* Lägg till avstånd mellan checkbox och etikett */
         cursor: pointer; /* Förbättra användarupplevelsen */
     }
-    
+    /* Hamburgermeny */
+    .filter-menu {
+        display: none;
+        flex-direction: column;
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-button {
+        display: none; /* Dölj på större skärmar */
+        background: #136e75;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .filter-button:hover {
+        background: #1badb8;
+    }
+
+    @media (max-width: 768px) {
+        .filter-button {
+            display: block; /* Visa på mindre skärmar */
+        }
+
+        .filter-menu {
+            display: none; /* Dölj filtret som standard */
+        }
+    }
 </style>
+
 
 <!-- Filtreringsformulär -->
 <div class="filter-form" style="margin-bottom: 20px; padding: 15px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">

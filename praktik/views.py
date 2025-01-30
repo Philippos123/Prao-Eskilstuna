@@ -3,6 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages  # För att visa meddelanden
 from .forms import PraoAnnonsForm
 from .models import *
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
 def home(request):
     nyheter = Nyhet.objects.all()[:5]
